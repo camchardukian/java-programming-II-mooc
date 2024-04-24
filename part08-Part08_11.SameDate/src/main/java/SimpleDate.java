@@ -1,4 +1,3 @@
-
 public class SimpleDate {
 
     private int day;
@@ -49,6 +48,19 @@ public class SimpleDate {
         }
 
         return this.year - other.year - yearRemoved;
+    }
+
+    public boolean equals(Object object) {
+        if (object == null) {
+            return false;
+        } else if (object instanceof SimpleDate == false) {
+            return false;
+        }
+        SimpleDate otherDate = (SimpleDate) object;
+        if (this.day == otherDate.day && this.month == otherDate.month && this.year == otherDate.year) {
+            return true;
+        }
+        return false;
     }
 
 }
