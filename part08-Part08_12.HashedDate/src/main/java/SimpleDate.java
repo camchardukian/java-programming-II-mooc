@@ -51,4 +51,13 @@ public class SimpleDate {
         return this.year - other.year - yearRemoved;
     }
 
+    public int hashCode() {
+        int result = 11;
+        int primeMultiplier = 13;
+        result = result * primeMultiplier * this.year;
+        result = result * primeMultiplier * this.month;
+        result = result * primeMultiplier * this.day;
+        return result;
+    }
+
 }
